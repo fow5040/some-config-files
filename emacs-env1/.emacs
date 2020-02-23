@@ -3,6 +3,7 @@
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
+(add-to-list 'package-archives '("elpa" . "http://elpa.gnu.org/packages/"))
 
 ;;Don't forget to run
 ;; M-x package-refresh-contents
@@ -18,7 +19,7 @@
  '(org-agenda-files
    (quote
     ;;FRANK: put your org mode files here
-    ("c:/Users/Frank/Google Drive/_environment_stuff/org_mode/test.org")))
+    ("/mnt/c/Users/Frank/Google Drive/_environment_stuff/org_mode/main.org")))
  '(package-selected-packages
    (quote
     (evil-org evil-surround ## company-quickhelp company cider evil-visual-mark-mode))))
@@ -28,10 +29,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-(add-to-list 'load-path "~/.emacs.d/evil")
-(require 'evil)
-(evil-mode 1)
 
 (progn
   (unless (fboundp 'helm-mode)
@@ -83,15 +80,20 @@
 (unless (package-installed-p 'cider)
        (package-install 'cider)) 
 
+(unless (package-installed-p 'evil)
+       (package-install 'evil)) 
+
 (require 'evil-surround)
+
+(require 'evil)
+(evil-mode 1)
+
 (global-evil-surround-mode 1)
 
 
 (global-company-mode)
 ;;(add-hook 'cider-repl-mode-hook #'company-mode)
 ;;(add-hook 'cider-mode-hook #'company-mode)
-
-
 
 (global-set-key (kbd "TAB") #'company-indent-or-complete-common)
 
