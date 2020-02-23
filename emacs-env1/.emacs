@@ -4,6 +4,10 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 
+;;Don't forget to run
+;; M-x package-refresh-contents
+;; M-x package-install RET use-package RET
+
 (setq package-enable-at-startup nil)
 (package-initialize)
 (custom-set-variables
@@ -11,9 +15,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-agenda-files
+   (quote
+    ;;FRANK: put your org mode files here
+    ("c:/Users/Frank/Google Drive/_environment_stuff/org_mode/test.org")))
  '(package-selected-packages
    (quote
-    (evil-surround ## company-quickhelp company cider evil-visual-mark-mode))))
+    (evil-org evil-surround ## company-quickhelp company cider evil-visual-mark-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -93,3 +101,14 @@
 (define-key evil-normal-state-map  (kbd "M-.") #'cider-find-var)
 (define-key evil-normal-state-map  (kbd "M-e") #'cider-eval-defun-at-point)
 
+(use-package evil-org
+             :ensure t
+             :after org
+             :config
+             (add-hook 'org-mode-hook 'evil-org-mode)
+             (add-hook 'evil-org-mode-hook
+                       (lambda ()
+                         (evil-org-set-key-theme)))
+             (require 'evil-org-agenda)
+             (evil-org-agenda-set-keys))
+(global-set-key "\C-ca" 'org-agenda)
