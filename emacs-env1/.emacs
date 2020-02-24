@@ -5,9 +5,10 @@
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 (add-to-list 'package-archives '("elpa" . "http://elpa.gnu.org/packages/"))
 
-;;Don't forget to run
-;; M-x package-refresh-contents
-;; M-x package-install RET use-package RET
+;;FRANK: 
+;;    Don't forget to run
+;;    M-x package-refresh-contents
+;;    M-x package-install RET use-package RET
 
 (setq package-enable-at-startup nil)
 (package-initialize)
@@ -18,7 +19,6 @@
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
    (quote
-    ;;FRANK: put your org mode files here
     ("/mnt/c/Users/Frank/Google Drive/_environment_stuff/org_mode/main.org")))
  '(package-selected-packages
    (quote
@@ -85,12 +85,13 @@
 
 (require 'evil-surround)
 
+;;so tab works in evil org mode (should run org-cycle)
+(setq evil-want-C-i-jump nil)
+
 (require 'evil)
 (evil-mode 1)
 
 (global-evil-surround-mode 1)
-
-
 (global-company-mode)
 ;;(add-hook 'cider-repl-mode-hook #'company-mode)
 ;;(add-hook 'cider-mode-hook #'company-mode)
@@ -100,8 +101,12 @@
 (electric-pair-mode t)
 
 ;;TODO: make this trigger and only activate during cider repl mode
-(define-key evil-normal-state-map  (kbd "M-.") #'cider-find-var)
-(define-key evil-normal-state-map  (kbd "M-e") #'cider-eval-defun-at-point)
+(add-hook 'cider-mode-hook
+        (lambda ()
+            (define-key evil-normal-state-map  (kbd "M-.") #'cider-find-var)
+            (define-key evil-normal-state-map  (kbd "M-e") #'cider-eval-defun-at-point)))
+
+(evil-define-key 'normal org-mode-map (kbd "tab") #'org-cycle)
 
 (use-package evil-org
              :ensure t
@@ -110,7 +115,9 @@
              (add-hook 'org-mode-hook 'evil-org-mode)
              (add-hook 'evil-org-mode-hook
                        (lambda ()
+                         (define-key evil-normal-state-map  (kbd "TAB") #'org-cycle)
                          (evil-org-set-key-theme)))
              (require 'evil-org-agenda)
              (evil-org-agenda-set-keys))
+
 (global-set-key "\C-ca" 'org-agenda)
