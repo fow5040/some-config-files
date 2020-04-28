@@ -1,0 +1,17 @@
+#!/bin/bash
+if [[ $1 = "-e" ]]
+then
+  vi /usr/local/bin/howto
+else
+  echo "For Eclim
+  \$ECLIPSE_HOME/eclimd << start the headless eclim daemon
+  cd (project_dir)
+  mvn eclipse:eclipse	<< generate the project files for Eclipse
+  vi
+  :MvnRepo
+  :ProjectImport ./
+
+
+Type howto -e to edit "
+
+fi
