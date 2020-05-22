@@ -42,12 +42,15 @@ command! CopyBufferFullpath let @+ = expand('%:p')
 filetype plugin indent on
 
 "Java Eclim commands
+let g:EclimJavaSearchSingleResult = 'split'
 autocmd FileType java      nnoremap <buffer> <leader>d :JavaDocSearch -x declarations<cr>
 autocmd FileType java      nnoremap <buffer> <leader>h :JavaHierarchy<cr>
 autocmd FileType java      nnoremap <buffer> <cr> :JavaSearchContext<cr>
 autocmd FileType java      nnoremap <buffer> <leader>f :JavaSearch 
 autocmd FileType java      nnoremap <buffer> <leader>c :JavaCorrect<cr>
 autocmd FileType java      nnoremap <buffer> <leader>v :Validate<cr>
+autocmd FileType java      nnoremap <buffer> <leader>n :lnext<cr>
+autocmd FileType java      nnoremap <buffer> <leader>N :lprev<cr>
 
 "C/CPP Eclim Commands
 autocmd FileType cpp       nnoremap <buffer> <cr> :CSearchContext<cr>
@@ -66,3 +69,4 @@ autocmd FileType py        nnoremap <buffer> <leader>u :PythonSearch -x referenc
 
 "Eclim + Supertab
 let g:SuperTabDefaultCompletionType = 'context'
+
