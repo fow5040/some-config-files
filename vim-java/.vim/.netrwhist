@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/Users/fwalsh119/.ssh'
+let g:netrw_dirhist_4='/Users/fwalsh119/Repos_Personal/Helium/Helium/Helium.xcodeproj'
+let g:netrw_dirhist_3='/Users/fwalsh119/Repos_Personal/Helium/Helium'
+let g:netrw_dirhist_2='/usr/bin'
+let g:netrw_dirhist_1='/Users/fwalsh119/Repos/Portal-ms-atlas/src'
+let g:netrw_dirhist_0='/Users/fwalsh119/Repos/Portal-ms-atlas/src/main'
+let g:netrw_dirhist_9='/Users/fwalsh119/Repos/dx-metadata-util/src'
+let g:netrw_dirhist_8='/Users/fwalsh119/Repos/dx-metadata-util/src/test/java/com/comcast/dx/metadata/entities'
+let g:netrw_dirhist_7='/Users/fwalsh119/Repos/dx-metadata-util/src/test/java/com/comcast/dx/metadata'
+let g:netrw_dirhist_6='/Users/fwalsh119/Repos/dx-metadata-util/src/test/java/com/comcast/dx'
