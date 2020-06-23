@@ -58,7 +58,7 @@ autocmd FileType cpp       nnoremap <buffer> <leader>f :CSearch
 autocmd FileType c         nnoremap <buffer> <cr> :CSearchContext<cr>
 autocmd FileType c         nnoremap <buffer> <leader>f :CSearch 
 
-"Java Eclim commands
+"Python Eclim commands
 autocmd FileType py        nnoremap <buffer> <cr> :PythonSearchContext<cr>
 autocmd FileType py        nnoremap <buffer> <leader>f :PythonSearch 
 autocmd FileType py        nnoremap <buffer> <leader>u :PythonSearch -x references 
@@ -70,3 +70,20 @@ autocmd FileType py        nnoremap <buffer> <leader>u :PythonSearch -x referenc
 "Eclim + Supertab
 let g:SuperTabDefaultCompletionType = 'context'
 
+"New command to format json file
+command! JSONFormatFile :execute '%!python -m json.tool' | set filetype=json
+
+"For EasyMotion
+    let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+    " Jump to anywhere you want with minimal keystrokes, with just one key binding.
+    " `s{char}{label}`
+    nmap \ <Plug>(easymotion-overwin-f)
+
+    " or
+    " `s{char}{char}{label}`
+    " Need one more keystroke, but on average, it may be more comfortable.
+    "nmap s <Plug>(easymotion-overwin-f2)
+    
+    " Turn on case-insensitive feature
+    let g:EasyMotion_smartcase = 1

@@ -1,0 +1,3 @@
+[submodule "vim-java/.vim/bundle/bundle/jedi-vim"]
+	path = vim-java/.vim/bundle/bundle/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git
