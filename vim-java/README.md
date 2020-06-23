@@ -1,23 +1,30 @@
-###Mini Summary
+## Mini Summary
 
 For java and other things
 
 After cloning...
 
 
-Install:
+#### Install:
     `git submodule update --init`
 
-Upgrade:
+#### Upgrade:
     `cd <bundle directory>` 
     `git pull origin master`
 
-Or:
+#### Or:
     `git submodule foreach git pull origin master`
 
-Add module:
+#### Add module:
     `cd bundle`
     `git submodule add <url> bundle/reponame`
     `git add *`
     `git commit -m "commit message"`
 
+
+### Requirements:
+|plugin |requirement|
+|---    |---        |
+|most   | vim, +python |
+|vim-clang   | clang installed |
+|vim-markdown-preview | Grip, xdotool (Linux) |
