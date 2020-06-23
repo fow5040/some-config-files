@@ -28,3 +28,6 @@
 [submodule "vim-java/.vim/bundle/vim-toml"]
 	path = vim-java/.vim/bundle/vim-toml
 	url = https://github.com/cespare/vim-toml.git
+[submodule "vim-java/.vim/bundle/vim-signjump"]
+	path = vim-java/.vim/bundle/vim-signjump
+	url = https://github.com/ZeroKnight/vim-signjump.git
