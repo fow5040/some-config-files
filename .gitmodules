@@ -31,3 +31,6 @@
 [submodule "vim-java/.vim/bundle/vim-signjump"]
 	path = vim-java/.vim/bundle/vim-signjump
 	url = https://github.com/ZeroKnight/vim-signjump.git
+[submodule "vim-java/.vim/bundle/lightline.vim"]
+	path = vim-java/.vim/bundle/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
