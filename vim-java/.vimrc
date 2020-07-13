@@ -73,6 +73,9 @@ let g:SuperTabDefaultCompletionType = 'context'
 "New command to format json file
 command! JSONFormatFile :execute '%!python -m json.tool' | set filetype=json
 
+"For vim-json, to turn off concealment
+let g:vim_json_syntax_conceal = 0
+
 "For EasyMotion
     let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
