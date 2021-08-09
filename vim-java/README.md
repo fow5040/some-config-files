@@ -16,7 +16,7 @@ After cloning...
     `git submodule foreach git pull origin master`
 
 #### Add module:
-    `cd bundle`
+    `cd .vim`
     `git submodule add <url> bundle/reponame`
     `git add *`
     `git commit -m "commit message"`
