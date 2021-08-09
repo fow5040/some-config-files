@@ -34,3 +34,9 @@
 [submodule "vim-java/.vim/bundle/lightline.vim"]
 	path = vim-java/.vim/bundle/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
+[submodule "vim-java/.vim/bundle/bundle/vim-angular"]
+	path = vim-java/.vim/bundle/bundle/vim-angular
+	url = git://github.com/burnettk/vim-angular.git
+[submodule "vim-java/.vim/bundle/vim-angular"]
+	path = vim-java/.vim/bundle/vim-angular
+	url = git://github.com/burnettk/vim-angular.git

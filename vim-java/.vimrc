@@ -41,6 +41,12 @@ command! CopyBufferFullpath let @+ = expand('%:p')
 "Eclim Specific Settings
 filetype plugin indent on
 
+"Eclim + Supertab
+let g:SuperTabDefaultCompletionType = 'context'
+
+"For Non Comcast Java code
+:set tabstop=2 shiftwidth=2 expandtab
+
 "Java Eclim commands
 let g:EclimJavaSearchSingleResult = 'split'
 autocmd FileType java      nnoremap <buffer> <leader>d :JavaDocSearch -x declarations<cr>
@@ -51,6 +57,7 @@ autocmd FileType java      nnoremap <buffer> <leader>c :JavaCorrect<cr>
 autocmd FileType java      nnoremap <buffer> <leader>v :Validate<cr>
 autocmd FileType java      nnoremap <buffer> <leader>n :lnext<cr>
 autocmd FileType java      nnoremap <buffer> <leader>N :lprev<cr>
+autocmd FileType java      :set tabstop=4 shiftwidth=4 expandtab
 
 "C/CPP Eclim Commands
 autocmd FileType cpp       nnoremap <buffer> <cr> :CSearchContext<cr>
@@ -62,13 +69,14 @@ autocmd FileType c         nnoremap <buffer> <leader>f :CSearch
 autocmd FileType py        nnoremap <buffer> <cr> :PythonSearchContext<cr>
 autocmd FileType py        nnoremap <buffer> <leader>f :PythonSearch 
 autocmd FileType py        nnoremap <buffer> <leader>u :PythonSearch -x references 
+autocmd Filetype py        let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+autocmd Filetype py        let g:SuperTabMappingForward = '<c-@>'
+autocmd Filetype py        let g:SuperTabMappingBackward = '<s-c-@>'
+autocmd Filetype py        :set tabstop=4 shiftwidth=4 expandtab
 
-
-"For Comcast Codebase
-:set tabstop=4 shiftwidth=4 expandtab
-
-"Eclim + Supertab
-let g:SuperTabDefaultCompletionType = 'context'
+"Todo file command
+autocmd BufEnter *.content :setlocal filetype=markdown
+autocmd BufEnter *.content :set tabstop=4 shiftwidth=4 expandtab
 
 "New command to format json file
 command! JSONFormatFile :execute '%!python -m json.tool' | set filetype=json
