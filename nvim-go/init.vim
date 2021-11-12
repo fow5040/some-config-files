@@ -4,7 +4,30 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'fatih/vim-go'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'easymotion/vim-easymotion'
 call plug#end()
+
+" -------------------------------------------------------------------------------------------------
+" easymotion settings
+" -------------------------------------------------------------------------------------------------
+
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Turn on case-insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" Simpler jump?
+nmap <Leader><Leader> <Plug>(easymotion-s)
+
+
+" -------------------------------------------------------------------------------------------------
+" vim-go settings
+" -------------------------------------------------------------------------------------------------
+
+" disable vim-go :GoDef short cut (gd)
+" this is handled by LanguageClient [LC]
+let g:go_def_mapping_enabled = 0
+
 
 " -------------------------------------------------------------------------------------------------
 " coc.nvim default settings
@@ -72,9 +95,4 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
-
-" disable vim-go :GoDef short cut (gd)
-" this is handled by LanguageClient [LC]
-let g:go_def_mapping_enabled = 0
 
