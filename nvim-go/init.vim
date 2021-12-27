@@ -4,8 +4,32 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'fatih/vim-go'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
 Plug 'easymotion/vim-easymotion'
+Plug 'solarnz/thrift.vim'
+Plug 'preservim/nerdtree'
 call plug#end()
+
+" --------------------------------------------------------------------------------------------------
+" fwalsh settings
+" -------------------------------------------------------------------------------------------------
+
+let mapleader = "="
+syntax on
+filetype plugin indent on
+" number of characters to indent by
+set shiftwidth=4
+" No. of characters for Tab key
+set tabstop=4
+" Set Tab character to expand as spaces
+set expandtab
+" Change the 'go back' command
+nnoremap gb <C-o>
+" Easy (?) nerdtree mapping
+nnoremap <C-o> :NERDTreeToggle<CR>
+
+command! JSONFormatFile :execute "set filetype=json | %!jq ."
+
 
 " -------------------------------------------------------------------------------------------------
 " easymotion settings
@@ -95,4 +119,3 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-

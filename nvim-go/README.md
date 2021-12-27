@@ -73,4 +73,6 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
   }
 }
 ```
+- Optionally, run `:CocInstall coc-tsserver` 
+
 
