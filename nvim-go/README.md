@@ -74,5 +74,5 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 }
 ```
 - Optionally, run `:CocInstall coc-tsserver` 
-
-
+- coc-jedi may need python3
+- coc-omnishap needs dotnet

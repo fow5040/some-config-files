@@ -3,7 +3,12 @@ call plug#begin('~/.vim/plugged')
 " < Other Plugins, if they exist >
 
 Plug 'fatih/vim-go'
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile', 'branch': 'release'}
+Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+"" Don't forget to run this:
+" :CocInstall coc-omnisharp
+"Plug 'coc-extensions/coc-omnisharp', {'do': 'yarn install --frozen-lockfile'}
 Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
 Plug 'easymotion/vim-easymotion'
 Plug 'solarnz/thrift.vim'
