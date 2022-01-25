@@ -29,7 +29,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 export NODEJS_HOME=/opt/<nodepath>/bin
 export PATH=$NODEJS_HOME:$PATH
 ```
-- Install yarn with `npm instal --global yarn`
+- Install yarn with `npm install --global yarn`
 
 
 ## Install go
