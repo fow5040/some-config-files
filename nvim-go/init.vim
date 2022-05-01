@@ -1,7 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
 " < Other Plugins, if they exist >
-
 Plug 'fatih/vim-go'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile', 'branch': 'release'}
 Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile'}
@@ -10,9 +9,11 @@ Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 " :CocInstall coc-omnisharp
 "Plug 'coc-extensions/coc-omnisharp', {'do': 'yarn install --frozen-lockfile'}
 Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
+Plug 'marlonfan/coc-phpls', { 'do': 'yarn install --frozen-lockfile'}
 Plug 'easymotion/vim-easymotion'
 Plug 'solarnz/thrift.vim'
 Plug 'preservim/nerdtree'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 call plug#end()
 
 " --------------------------------------------------------------------------------------------------
@@ -32,6 +33,16 @@ set expandtab
 nnoremap gb <C-o>
 " Easy (?) nerdtree mapping
 nnoremap <C-o> :NERDTreeToggle<CR>
+" Make it easy to switch out of terminal mode
+" see :help terminal-emulator
+tnoremap <Esc> <C-\><C-n>
+
+" Custom map for coc fix
+nmap <leader>cf :<C-u>CocFix<CR>
+
+" High tech go error handling function
+:command InsertComplexGoMonad :normal o if err != nil {<CR>return nil, err<CR>}<CR><ESC>
+nmap <leader>ge :<C-u>InsertComplexGoMonad<CR>
 
 command! JSONFormatFile :execute "set filetype=json | %!jq ."
 
