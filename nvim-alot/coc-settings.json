@@ -4,6 +4,11 @@
       "command": "$GOBIN/gopls",
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
       "filetypes": ["go"]
+    },
+    "ocaml-lsp": {
+      "command": "opam",
+      "args": ["config", "exec", "--", "ocamllsp"],
+      "filetypes": ["ocaml", "reason"]
     }
   }
 }
